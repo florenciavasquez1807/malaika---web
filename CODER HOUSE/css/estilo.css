@@ -1,0 +1,187 @@
+:root{
+  --brand:#d78ca3;       /* rosa principal */
+  --brand-dark:#a45f73;  /* rosa oscuro hover */
+  --ink:#333333;         /* texto principal */
+  --paper:#fff8f9;       /* fondo suave */
+  --black:#0B0B0C;       /* apoyo para nav oscuro si lo usás */
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: 'Segoe UI', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  padding-bottom: 100px; /* espacio si footer fijo */
+  overflow-x: hidden;
+}
+
+.text-gold{ color:var(--brand)!important; }
+.btn-gold{
+  background:var(--brand);
+  color:#111;
+  border:none;
+}
+.btn-gold:hover{ filter:brightness(.92); color:#111; }
+
+.container-narrow{ max-width: 920px; margin: 0 auto; }
+.section-title{ font-weight:700; color:#111; }
+
+img,svg,video{ max-width:100%; height:auto; display:block; }
+
+/* Solo navs simples, NO Bootstrap */
+header > nav:not(.navbar) ul{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:15px 0 0 0;
+  padding:0;
+}
+header > nav:not(.navbar) a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  padding:10px 15px;
+  border-radius:6px;
+  transition:background-color .3s ease;
+}
+header > nav:not(.navbar) a:hover{ background-color: var(--brand-dark); }
+
+main{ padding: 30px 20px; text-align: center; }
+main h2{ margin-bottom: 20px; color: var(--brand-dark); }
+
+.galeria{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+.item{
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+.item:hover{ transform: scale(1.03); }
+.item img{ width: 100%; height: auto; }
+.item p{ padding: 12px; font-size: 14px; }
+
+@media (max-width: 576px){
+  .item{ width: 100%; max-width: 320px; }
+}
+
+form{
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+form input,
+form textarea,
+form button{
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+form button{
+  background-color: var(--brand);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+form button:hover{ background-color: var(--brand-dark); }
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid{ border-color:#dc3545; }
+.was-validated .form-control:valid,
+.form-control.is-valid{ border-color:#198754; }
+
+/* Footer */
+footer{
+  position: fixed; 
+  bottom: 0;
+  left:0; right:0;
+  background-color: var(--brand);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+}
+footer .redes a{
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+}
+footer .redes a:hover{ text-decoration: underline; }
+
+.footer-top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.info-box{
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+/* Grillas de productos */
+.product-grid .card{ transition:transform .2s, box-shadow .2s; }
+.product-grid .card:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.08); }
+.card .card-img-top{ aspect-ratio: 4 / 3; object-fit: cover; }
+.card{ border-radius: .75rem; }
+.card img{ border-top-left-radius: .75rem; border-top-right-radius: .75rem; }
+
+/* Accordion */
+.accordion-button:focus{ box-shadow:none; }
+.accordion-button:not(.collapsed){ background: #ffffff; color:#111; }
+
+/* Navbar Bootstrap override */
+.navbar .navbar-brand.text-gold{ color: var(--brand)!important; }
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover{ opacity:1; }
+
+/* Accesibilidad: foco visible */
+a:focus-visible,
+button:focus-visible,
+.form-control:focus{
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Animaciones reducidas si el usuario lo pide */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: .01ms !important;
+     scroll-behavior: auto !important; }
+}
+
+/* Footer fijo: extra espacio en móvil */
+@media (max-width: 480px){
+  body{ padding-bottom: 130px; }
+}
