@@ -1,0 +1,30 @@
+// Flex con centrado y gap
+@mixin flex-center($gap: 0) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+// Botón con colores dinámicos
+@mixin btn($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  transition: background .3s ease, filter .3s ease;
+
+  &:hover {
+    filter: brightness(.9);
+  }
+}
+
+// Media queries
+@mixin max($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

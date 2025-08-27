@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: $paper;
+  color: $ink;
+  line-height: 1.6;
+  padding-bottom: 100px; // por footer fixed
+  overflow-x: hidden;
+}
+
+// Tipografía y títulos
+.section-title { font-weight: 700; color: $brand-dark; }
+.text-gold { color: $brand !important; }
+
+// Botón dorado
+.btn-gold { @include btn($brand, #111); }
+
+// Navbar
+.navbar .navbar-brand.text-gold { color: $brand !important; }
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover { opacity: 1; }
+
+// Footer
+footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background-color: $brand;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+
+  .redes a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
