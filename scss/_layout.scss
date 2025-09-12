@@ -1,3 +1,6 @@
+/* =========================
+   RESET Y BASE
+   ========================= */
 *,
 *::before,
 *::after {
@@ -12,26 +15,50 @@ body {
   background-color: $paper;
   color: $ink;
   line-height: 1.6;
-  padding-bottom: 100px; // por footer fixed
   overflow-x: hidden;
 }
 
-// Tipografía y títulos
-.section-title { font-weight: 700; color: $brand-dark; }
-.text-gold { color: $brand !important; }
+/* =========================
+   TIPOGRAFÍA Y TÍTULOS
+   ========================= */
+.section-title {
+  font-weight: 700;
+  color: $brand-dark;
+}
 
-// Botón dorado
-.btn-gold { @include btn($brand, #111); }
+.text-gold {
+  color: $brand !important;
+}
 
-// Navbar
-.navbar .navbar-brand.text-gold { color: $brand !important; }
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover { opacity: 1; }
+/* =========================
+   BOTONES
+   ========================= */
+.btn-gold {
+  @include btn($brand, #111);
+}
 
-// Footer
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+  .navbar-brand.text-gold {
+    color: $brand !important;
+  }
+
+  .nav-link {
+    color: #fff !important;
+
+    &:hover,
+    &.active {
+      color: $brand !important;
+    }
+  }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
   background-color: $brand;
   color: white;
   text-align: center;
@@ -42,6 +69,8 @@ footer {
     margin: 0 8px;
     text-decoration: none;
 
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

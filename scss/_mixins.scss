@@ -1,4 +1,8 @@
-// Flex con centrado y gap
+// =========================
+// 📌 MIXINS REUTILIZABLES
+// =========================
+
+// 🔹 Flex con centrado + gap dinámico
 @mixin flex-center($gap: 0) {
   display: flex;
   justify-content: center;
@@ -6,7 +10,7 @@
   gap: $gap;
 }
 
-// Botón con colores dinámicos
+// 🔹 Botón con colores dinámicos
 @mixin btn($bg, $color) {
   background-color: $bg;
   color: $color;
@@ -22,7 +26,7 @@
   }
 }
 
-// Media queries
+// 🔹 Media queries con breakpoint flexible
 @mixin max($bp) {
   @media (max-width: $bp) {
     @content;

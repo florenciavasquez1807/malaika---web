@@ -1,11 +1,14 @@
-$brand: #d78ca3;        // Rosa principal
-$brand-dark: #a45f73;   // Rosa oscuro (hover)
-$ink: #333333;          // Texto principal
-$paper: #fff8f9;        // Fondo suave
-$black: #0B0B0C;        // Negro apoyo
 
-// Breakpoints
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
+$brand:      #d78ca3;  // Rosa principal (identidad)
+$brand-dark: #a45f73;  // Rosa oscuro (hover y contraste)
+$ink:        #333333;  // Texto principal
+$paper:      #fff8f9;  // Fondo suave
+$black:      #0B0B0C;  // Negro apoyo
+
+// =========================
+// 📱 BREAKPOINTS RESPONSIVE
+// =========================
+$bp-sm: 576px;   // Móviles
+$bp-md: 768px;   // Tablets
+$bp-lg: 992px;   // Desktop mediano
+$bp-xl: 1200px;  // Desktop grande
